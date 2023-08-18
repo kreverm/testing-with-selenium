@@ -6,6 +6,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class Browser:
+    """
+    Base class for Selenium testing.
+    Supports Chrome only.
+    """
     def __init__(self):
         self.chrome_browser = webdriver.Chrome()
 
