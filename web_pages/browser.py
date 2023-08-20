@@ -1,3 +1,5 @@
+from retrying import retry
+
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
@@ -30,6 +32,7 @@ class Browser:
     def wait_for_element_presence(self, selector: str, by=By.CSS_SELECTOR):
         WebDriverWait(self.chrome_browser, 5).until(EC.presence_of_element_located((by, selector)))
 
+    @retry(wait_fixed=2000, stop_max_attempt_number=5)
     def enter_text(self, selector: str, text: str, by=By.CSS_SELECTOR):
         self.wait_for_element_presence(selector=selector, by=by)
         self.chrome_browser.find_element(by, selector).send_keys(text)

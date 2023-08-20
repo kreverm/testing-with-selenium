@@ -10,8 +10,9 @@ Test steps:
 4. Input test value and get the result.
 
 
-### API test for www.weatherapi.com
+### Weather tests
 
 1. Get WeatherAPI key from the site.
-2. Use the api to get current weather for zip code 20852.
-3. Test API response.
+2. Use API to get current weather temperature for zip code 20852 from www.weatherapi.com.
+3. Use UI get current weather temperature for zip code 20852 from www.weather.com.
+4. Compare two temperatures and determine if they're in range of 10% of each other.

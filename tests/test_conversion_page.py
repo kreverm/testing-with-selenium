@@ -46,7 +46,7 @@ def test_conversion(conversion_type, conversion_form, value, expected_result):
     page.enter_search_text(*conversion_type)
     # Find conversion form, enter value, redirect and extract the result text
     result = page.make_conversion(conversion_form, value)
-    # Close the browser at the end of the test run
+    # Close the browser at the end of the test parameter run
     page.chrome_browser.quit()
     # Make an assertion
     assert result == expected_result
